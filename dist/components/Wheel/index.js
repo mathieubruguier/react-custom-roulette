@@ -37,8 +37,7 @@ export var Wheel = function (_a) {
     useEffect(function () {
         var _a, _b;
         var dataLength = data.length;
-        setWheelData(__spreadArray([], data));
-        var wheelDataAux = [];
+        var wheelDataAux = [{ option: '' }];
         for (var i = 0; i < dataLength; i++) {
             wheelDataAux[i] = __assign(__assign({}, data[i]), { style: {
                     backgroundColor: ((_a = data[i].style) === null || _a === void 0 ? void 0 : _a.backgroundColor) ||
@@ -46,7 +45,7 @@ export var Wheel = function (_a) {
                     textColor: ((_b = data[i].style) === null || _b === void 0 ? void 0 : _b.textColor) || textColors[i % textColors.length],
                 } });
         }
-        dataLength && setWheelData(__spreadArray([], wheelDataAux));
+        setWheelData(__spreadArray([], wheelDataAux));
         setIsDataUpdated(true);
     }, [data, backgroundColors, textColors]);
     useEffect(function () {
